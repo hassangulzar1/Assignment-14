@@ -9,7 +9,9 @@ let object = {
 function keyBecomevalue(obj) {
   let newObject = {};
   for (const key in obj) {
-    newObject[key] = key;
+    if (obj.hasOwnProperty(key)) {
+      newObject[obj[key]] = key;
+    }
   }
   return newObject;
 }
